@@ -13,7 +13,7 @@
 
 using Mediator;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.game.command;
+namespace MagicaMedusa.scripts.cqrs.game.command;
 
 /// <summary>
 ///     退出游戏命令记录类，用于表示退出游戏的指令

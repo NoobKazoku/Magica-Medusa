@@ -1,8 +1,8 @@
-using GFramework.Core.cqrs.command;
-using GFrameworkGodotTemplate.scripts.cqrs.graphics.command.input;
+﻿using GFramework.Core.cqrs.command;
+using MagicaMedusa.scripts.cqrs.graphics.command.input;
 using Unit = Mediator.Unit;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.graphics.command;
+namespace MagicaMedusa.scripts.cqrs.graphics.command;
 
 /// <summary>
 ///     更改分辨率命令类

@@ -12,9 +12,9 @@
 // limitations under the License.
 
 using GFramework.Game.Abstractions.data;
-using GFrameworkGodotTemplate.scripts.data.model;
+using MagicaMedusa.scripts.data.model;
 
-namespace GFrameworkGodotTemplate.scripts.setting;
+namespace MagicaMedusa.scripts.setting;
 
 public class SettingDataLocationProvider : IDataLocationProvider
 {

@@ -1,14 +1,14 @@
-using GFramework.Game.Abstractions.enums;
+﻿using GFramework.Game.Abstractions.enums;
 using GFramework.Game.Abstractions.ui;
 using GFramework.Godot.coroutine;
 using GFramework.Godot.extensions;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.constants;
-using GFrameworkGodotTemplate.scripts.cqrs.global.events;
+using MagicaMedusa.scripts.constants;
+using MagicaMedusa.scripts.cqrs.global.events;
 using Godot;
 
-namespace GFrameworkGodotTemplate.global;
+namespace MagicaMedusa.global;
 
 /// <summary>
 ///     UI画布层根节点，用于管理UI页面的添加和组织

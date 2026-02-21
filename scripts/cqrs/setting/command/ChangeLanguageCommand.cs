@@ -1,8 +1,8 @@
-using GFramework.Core.cqrs.command;
-using GFrameworkGodotTemplate.scripts.cqrs.setting.command.input;
+﻿using GFramework.Core.cqrs.command;
+using MagicaMedusa.scripts.cqrs.setting.command.input;
 using Unit = Mediator.Unit;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.setting.command;
+namespace MagicaMedusa.scripts.cqrs.setting.command;
 
 /// <summary>
 ///     更改语言命令类

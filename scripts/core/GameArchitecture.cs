@@ -1,10 +1,10 @@
-using GFramework.Core.Abstractions.architecture;
+﻿using GFramework.Core.Abstractions.architecture;
 using GFramework.Core.Abstractions.environment;
 using GFramework.Godot.architecture;
-using GFrameworkGodotTemplate.scripts.module;
+using MagicaMedusa.scripts.module;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GFrameworkGodotTemplate.scripts.core;
+namespace MagicaMedusa.scripts.core;
 
 /// <summary>
 ///     游戏架构类，负责安装和管理游戏所需的各种模块

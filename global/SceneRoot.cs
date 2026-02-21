@@ -1,12 +1,12 @@
-using GFramework.Game.Abstractions.scene;
+﻿using GFramework.Game.Abstractions.scene;
 using GFramework.Godot.coroutine;
 using GFramework.Godot.extensions;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.cqrs.scene.events;
+using MagicaMedusa.scripts.cqrs.scene.events;
 using Godot;
 
-namespace GFrameworkGodotTemplate.global;
+namespace MagicaMedusa.global;
 
 /// <summary>
 ///     场景根节点类

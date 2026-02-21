@@ -1,15 +1,15 @@
-using GFramework.Core.Abstractions.state;
+﻿using GFramework.Core.Abstractions.state;
 using GFramework.Game.Abstractions.ui;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.core.controller;
-using GFrameworkGodotTemplate.scripts.core.state.impls;
-using GFrameworkGodotTemplate.scripts.cqrs.game.command;
-using GFrameworkGodotTemplate.scripts.cqrs.pause_menu.command.input;
-using GFrameworkGodotTemplate.scripts.enums;
+using MagicaMedusa.scripts.core.controller;
+using MagicaMedusa.scripts.core.state.impls;
+using MagicaMedusa.scripts.cqrs.game.command;
+using MagicaMedusa.scripts.cqrs.pause_menu.command.input;
+using MagicaMedusa.scripts.enums;
 using Godot;
 
-namespace GFrameworkGodotTemplate.global;
+namespace MagicaMedusa.global;
 
 /// <summary>
 ///     全局输入控制器类，继承自 GameInputController。

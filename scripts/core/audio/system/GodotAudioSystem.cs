@@ -13,11 +13,11 @@
 
 using GFramework.Core.system;
 using GFramework.SourceGenerators.Abstractions.logging;
-using GFrameworkGodotTemplate.scripts.enums.audio;
-using global::GFrameworkGodotTemplate.global;
+using MagicaMedusa.scripts.enums.audio;
+using global::MagicaMedusa.global;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.core.audio.system;
+namespace MagicaMedusa.scripts.core.audio.system;
 
 /// <summary>
 /// Godot音频系统实现类

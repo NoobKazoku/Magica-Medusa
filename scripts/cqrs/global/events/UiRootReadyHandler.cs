@@ -14,11 +14,11 @@
 using GFramework.Core.Abstractions.state;
 using GFramework.Core.cqrs.notification;
 using GFramework.Godot.scene;
-using GFrameworkGodotTemplate.scripts.core.state.impls;
-using GFrameworkGodotTemplate.scripts.core.utils;
-using GFrameworkGodotTemplate.scripts.enums.scene;
+using MagicaMedusa.scripts.core.state.impls;
+using MagicaMedusa.scripts.core.utils;
+using MagicaMedusa.scripts.enums.scene;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.global.events;
+namespace MagicaMedusa.scripts.cqrs.global.events;
 
 /// <summary>
 /// UI根节点就绪事件处理器

@@ -1,9 +1,9 @@
-using GFramework.Core.cqrs.command;
+﻿using GFramework.Core.cqrs.command;
 using GFramework.Game.Abstractions.enums;
 using GFramework.Game.Abstractions.ui;
 using Unit = Mediator.Unit;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.pause_menu.command;
+namespace MagicaMedusa.scripts.cqrs.pause_menu.command;
 
 /// <summary>
 ///     关闭暂停菜单命令处理器

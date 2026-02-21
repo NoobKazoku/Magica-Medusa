@@ -12,10 +12,10 @@
 // limitations under the License.
 
 using GFramework.Core.Abstractions.bases;
-using GFrameworkGodotTemplate.scripts.enums.resources;
+using MagicaMedusa.scripts.enums.resources;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.core.resource;
+namespace MagicaMedusa.scripts.core.resource;
 
 /// <summary>
 ///     TextureConfig 类用于配置纹理资源，实现 IKeyValue 接口以提供键值对访问。

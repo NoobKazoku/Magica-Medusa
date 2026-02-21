@@ -1,13 +1,13 @@
-using GFramework.Core.Abstractions.controller;
+﻿using GFramework.Core.Abstractions.controller;
 using GFramework.Game.Abstractions.scene;
 using GFramework.Godot.scene;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.core.scene;
-using GFrameworkGodotTemplate.scripts.enums.scene;
+using MagicaMedusa.scripts.core.scene;
+using MagicaMedusa.scripts.enums.scene;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.tests;
+namespace MagicaMedusa.scripts.tests;
 
 /// <summary>
 ///     主页场景控制器类

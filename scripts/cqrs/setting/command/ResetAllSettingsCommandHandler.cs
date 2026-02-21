@@ -1,8 +1,8 @@
-using GFramework.Core.cqrs.command;
+﻿using GFramework.Core.cqrs.command;
 using GFramework.Game.Abstractions.setting;
 using Unit = Mediator.Unit;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.setting.command;
+namespace MagicaMedusa.scripts.cqrs.setting.command;
 
 /// <summary>
 ///     重置所有设置命令处理器

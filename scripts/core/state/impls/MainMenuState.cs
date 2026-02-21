@@ -1,10 +1,10 @@
-using GFramework.Core.Abstractions.state;
+﻿using GFramework.Core.Abstractions.state;
 using GFramework.Core.state;
 using GFramework.Game.Abstractions.scene;
 using GFramework.Game.Abstractions.ui;
-using GFrameworkGodotTemplate.scripts.main_menu;
+using MagicaMedusa.scripts.main_menu;
 
-namespace GFrameworkGodotTemplate.scripts.core.state.impls;
+namespace MagicaMedusa.scripts.core.state.impls;
 
 /// <summary>
 ///     主菜单状态

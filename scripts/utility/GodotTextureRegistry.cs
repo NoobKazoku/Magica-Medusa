@@ -14,7 +14,7 @@
 using GFramework.Core.Abstractions.registries;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.utility;
+namespace MagicaMedusa.scripts.utility;
 
 /// <summary>
 ///     GodotTextureRegistry 类继承自 KeyValueRegistryBase 并实现 IGodotTextureRegistry 接口。

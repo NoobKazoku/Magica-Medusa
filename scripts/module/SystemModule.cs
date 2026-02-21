@@ -1,11 +1,11 @@
 ﻿using GFramework.Core.Abstractions.architecture;
 using GFramework.Game.architecture;
 using GFramework.Game.setting;
-using GFrameworkGodotTemplate.scripts.core.audio.system;
-using GFrameworkGodotTemplate.scripts.core.scene;
-using GFrameworkGodotTemplate.scripts.core.ui;
+using MagicaMedusa.scripts.core.audio.system;
+using MagicaMedusa.scripts.core.scene;
+using MagicaMedusa.scripts.core.ui;
 
-namespace GFrameworkGodotTemplate.scripts.module;
+namespace MagicaMedusa.scripts.module;
 
 /// <summary>
 ///     系统Godot模块类，负责安装和注册游戏所需的各种系统组件

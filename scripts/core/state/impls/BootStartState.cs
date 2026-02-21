@@ -14,9 +14,9 @@
 using GFramework.Core.Abstractions.state;
 using GFramework.Core.state;
 using GFramework.Game.Abstractions.scene;
-using GFrameworkGodotTemplate.scripts.enums.scene;
+using MagicaMedusa.scripts.enums.scene;
 
-namespace GFrameworkGodotTemplate.scripts.core.state.impls;
+namespace MagicaMedusa.scripts.core.state.impls;
 
 /// <summary>
 ///     表示启动状态的类，继承自 ContextAwareStateBase。

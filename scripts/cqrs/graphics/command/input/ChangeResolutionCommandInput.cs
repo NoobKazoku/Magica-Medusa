@@ -13,7 +13,7 @@
 
 using GFramework.Core.Abstractions.cqrs.command;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.graphics.command.input;
+namespace MagicaMedusa.scripts.cqrs.graphics.command.input;
 
 /// <summary>
 ///     分辨率更改命令输入类，用于传递分辨率更改所需的参数

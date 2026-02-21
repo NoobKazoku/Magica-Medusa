@@ -13,7 +13,7 @@
 
 using Mediator;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.game.command;
+namespace MagicaMedusa.scripts.cqrs.game.command;
 
 /// <summary>
 ///     暂停游戏命令类，用于表示暂停游戏的指令

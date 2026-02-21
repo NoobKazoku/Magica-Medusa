@@ -1,6 +1,6 @@
-using GFramework.Core.Abstractions.cqrs.command;
+﻿using GFramework.Core.Abstractions.cqrs.command;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.setting.command.input;
+namespace MagicaMedusa.scripts.cqrs.setting.command.input;
 
 /// <summary>
 ///     更改语言命令输入类

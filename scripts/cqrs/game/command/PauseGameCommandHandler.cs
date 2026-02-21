@@ -14,11 +14,11 @@
 using GFramework.Core.Abstractions.state;
 using GFramework.Core.cqrs.command;
 using GFramework.Godot.coroutine;
-using GFrameworkGodotTemplate.scripts.core.state.impls;
-using GFrameworkGodotTemplate.scripts.core.utils;
+using MagicaMedusa.scripts.core.state.impls;
+using MagicaMedusa.scripts.core.utils;
 using Unit = Mediator.Unit;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.game.command;
+namespace MagicaMedusa.scripts.cqrs.game.command;
 
 /// <summary>
 ///     暂停游戏命令处理器类，负责处理暂停游戏的命令逻辑

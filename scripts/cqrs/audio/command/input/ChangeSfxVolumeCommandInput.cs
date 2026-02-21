@@ -1,6 +1,6 @@
-using GFramework.Core.Abstractions.cqrs.command;
+﻿using GFramework.Core.Abstractions.cqrs.command;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.audio.command.input;
+namespace MagicaMedusa.scripts.cqrs.audio.command.input;
 
 /// <summary>
 ///     音效音量更改命令输入类，用于传递SFX音量更改所需的参数

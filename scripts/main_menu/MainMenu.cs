@@ -1,4 +1,4 @@
-using GFramework.Core.Abstractions.controller;
+﻿using GFramework.Core.Abstractions.controller;
 using GFramework.Core.Abstractions.state;
 using GFramework.Game.Abstractions.enums;
 using GFramework.Game.Abstractions.ui;
@@ -6,16 +6,16 @@ using GFramework.Godot.coroutine;
 using GFramework.Godot.ui;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.core.state.impls;
-using GFrameworkGodotTemplate.scripts.core.ui;
-using GFrameworkGodotTemplate.scripts.cqrs.game.command;
-using GFrameworkGodotTemplate.scripts.cqrs.menu.command;
-using GFrameworkGodotTemplate.scripts.credits;
-using GFrameworkGodotTemplate.scripts.enums.ui;
-using global::GFrameworkGodotTemplate.global;
+using MagicaMedusa.scripts.core.state.impls;
+using MagicaMedusa.scripts.core.ui;
+using MagicaMedusa.scripts.cqrs.game.command;
+using MagicaMedusa.scripts.cqrs.menu.command;
+using MagicaMedusa.scripts.credits;
+using MagicaMedusa.scripts.enums.ui;
+using global::MagicaMedusa.global;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.main_menu;
+namespace MagicaMedusa.scripts.main_menu;
 
 /// <summary>
 ///     主菜单控制器类，继承自Control并实现IController、IUiPageBehaviorProvider和ISimpleUiPage接口

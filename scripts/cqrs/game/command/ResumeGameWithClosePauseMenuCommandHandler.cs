@@ -1,8 +1,8 @@
-using GFramework.Core.cqrs.command;
-using GFrameworkGodotTemplate.scripts.cqrs.pause_menu.command;
+﻿using GFramework.Core.cqrs.command;
+using MagicaMedusa.scripts.cqrs.pause_menu.command;
 using Unit = Mediator.Unit;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.game.command;
+namespace MagicaMedusa.scripts.cqrs.game.command;
 
 /// <summary>
 ///     恢复游戏并关闭暂停菜单命令处理器

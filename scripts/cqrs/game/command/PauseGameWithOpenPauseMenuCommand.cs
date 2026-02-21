@@ -1,8 +1,8 @@
-using GFramework.Core.cqrs.command;
+﻿using GFramework.Core.cqrs.command;
 using GFramework.Game.Abstractions.ui;
-using GFrameworkGodotTemplate.scripts.cqrs.pause_menu.command.input;
+using MagicaMedusa.scripts.cqrs.pause_menu.command.input;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.game.command;
+namespace MagicaMedusa.scripts.cqrs.game.command;
 
 /// <summary>
 ///     暂停游戏并打开暂停菜单命令类

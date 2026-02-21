@@ -1,6 +1,6 @@
-using Mediator;
+﻿using Mediator;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.game.command;
+namespace MagicaMedusa.scripts.cqrs.game.command;
 
 /// <summary>
 ///     恢复游戏命令类

@@ -7,10 +7,10 @@ using GFramework.Game.Abstractions.ui;
 using GFramework.Godot.ui;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.constants;
-using GFrameworkGodotTemplate.scripts.core.ui;
-using GFrameworkGodotTemplate.scripts.enums.ui;
-using GFrameworkGodotTemplate.global;
+using MagicaMedusa.scripts.constants;
+using MagicaMedusa.scripts.core.ui;
+using MagicaMedusa.scripts.enums.ui;
+using MagicaMedusa.global;
 
 
 [ContextAware]

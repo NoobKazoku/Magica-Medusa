@@ -13,9 +13,9 @@
 
 using GFramework.Core.cqrs.command;
 using GFramework.Game.Abstractions.ui;
-using GFrameworkGodotTemplate.scripts.cqrs.pause_menu.command.input;
+using MagicaMedusa.scripts.cqrs.pause_menu.command.input;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.pause_menu.command;
+namespace MagicaMedusa.scripts.cqrs.pause_menu.command;
 
 /// <summary>
 ///     打开暂停菜单命令类，用于表示打开暂停菜单的指令

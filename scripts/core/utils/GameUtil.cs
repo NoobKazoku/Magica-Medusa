@@ -11,10 +11,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using global::GFrameworkGodotTemplate.global;
+using global::MagicaMedusa.global;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.core.utils;
+namespace MagicaMedusa.scripts.core.utils;
 
 /// <summary>
 ///     提供游戏相关的工具方法。

@@ -1,10 +1,10 @@
-using GFramework.Core.cqrs.command;
+﻿using GFramework.Core.cqrs.command;
 using GFramework.Game.Abstractions.setting;
 using GFramework.Game.Abstractions.setting.data;
 using GFramework.Godot.setting;
 using Unit = Mediator.Unit;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.setting.command;
+namespace MagicaMedusa.scripts.cqrs.setting.command;
 
 /// <summary>
 ///     更改语言命令处理器

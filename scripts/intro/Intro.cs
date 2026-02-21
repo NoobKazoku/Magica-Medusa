@@ -1,4 +1,4 @@
-using GFramework.Core.Abstractions.controller;
+﻿using GFramework.Core.Abstractions.controller;
 using GFramework.Core.Abstractions.coroutine;
 using GFramework.Core.Abstractions.environment;
 using GFramework.Core.Abstractions.state;
@@ -6,13 +6,13 @@ using GFramework.Core.coroutine.instructions;
 using GFramework.Godot.coroutine;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.constants;
-using GFrameworkGodotTemplate.scripts.core.state.impls;
-using GFrameworkGodotTemplate.scripts.enums.resources;
-using GFrameworkGodotTemplate.scripts.utility;
+using MagicaMedusa.scripts.constants;
+using MagicaMedusa.scripts.core.state.impls;
+using MagicaMedusa.scripts.enums.resources;
+using MagicaMedusa.scripts.utility;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.intro;
+namespace MagicaMedusa.scripts.intro;
 
 [ContextAware]
 [Log]

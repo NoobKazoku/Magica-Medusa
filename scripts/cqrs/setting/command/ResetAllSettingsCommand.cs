@@ -1,6 +1,6 @@
-using Mediator;
+﻿using Mediator;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.setting.command;
+namespace MagicaMedusa.scripts.cqrs.setting.command;
 
 /// <summary>
 ///     重置所有设置命令类

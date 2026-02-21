@@ -13,7 +13,7 @@
 
 using Mediator;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.global.events;
+namespace MagicaMedusa.scripts.cqrs.global.events;
 
 /// <summary>
 /// UI根节点就绪事件

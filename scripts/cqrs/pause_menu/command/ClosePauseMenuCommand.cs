@@ -1,8 +1,8 @@
-using GFramework.Core.cqrs.command;
-using GFrameworkGodotTemplate.scripts.cqrs.pause_menu.command.input;
+﻿using GFramework.Core.cqrs.command;
+using MagicaMedusa.scripts.cqrs.pause_menu.command.input;
 using Unit = Mediator.Unit;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.pause_menu.command;
+namespace MagicaMedusa.scripts.cqrs.pause_menu.command;
 
 /// <summary>
 ///     关闭暂停菜单命令类

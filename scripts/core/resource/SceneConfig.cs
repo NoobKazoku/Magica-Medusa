@@ -1,8 +1,8 @@
 ﻿using GFramework.Core.Abstractions.bases;
-using GFrameworkGodotTemplate.scripts.enums.scene;
+using MagicaMedusa.scripts.enums.scene;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.core.resource;
+namespace MagicaMedusa.scripts.core.resource;
 
 /// <summary>
 ///     游戏场景配置资源类，用于存储游戏场景的键值和对应的场景资源

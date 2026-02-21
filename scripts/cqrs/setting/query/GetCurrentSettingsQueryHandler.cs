@@ -14,9 +14,9 @@
 using GFramework.Core.cqrs.query;
 using GFramework.Game.Abstractions.setting;
 using GFramework.Game.Abstractions.setting.data;
-using GFrameworkGodotTemplate.scripts.cqrs.setting.query.view;
+using MagicaMedusa.scripts.cqrs.setting.query.view;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.setting.query;
+namespace MagicaMedusa.scripts.cqrs.setting.query;
 
 /// <summary>
 /// 当前设置查询处理器

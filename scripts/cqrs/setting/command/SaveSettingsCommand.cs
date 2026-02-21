@@ -1,6 +1,6 @@
-using Mediator;
+﻿using Mediator;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.setting.command;
+namespace MagicaMedusa.scripts.cqrs.setting.command;
 
 /// <summary>
 ///     保存游戏设置命令类

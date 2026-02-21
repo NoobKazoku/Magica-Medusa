@@ -1,10 +1,10 @@
-using GFramework.Core.cqrs.command;
+﻿using GFramework.Core.cqrs.command;
 using GFramework.Game.Abstractions.setting;
 using GFramework.Game.Abstractions.setting.data;
 using GFramework.Godot.setting;
 using Unit = Mediator.Unit;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.graphics.command;
+namespace MagicaMedusa.scripts.cqrs.graphics.command;
 
 /// <summary>
 ///     更改分辨率命令处理器

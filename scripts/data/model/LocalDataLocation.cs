@@ -14,7 +14,7 @@
 using GFramework.Game.Abstractions.data;
 using GFramework.Game.Abstractions.enums;
 
-namespace GFrameworkGodotTemplate.scripts.data.model;
+namespace MagicaMedusa.scripts.data.model;
 
 /// <summary>
 ///     表示本地数据位置的实现类，实现了IDataLocation接口

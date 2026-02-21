@@ -1,4 +1,4 @@
-using GFramework.Core.Abstractions.controller;
+﻿using GFramework.Core.Abstractions.controller;
 using GFramework.Core.Abstractions.coroutine;
 using GFramework.Core.Abstractions.events;
 using GFramework.Core.coroutine.instructions;
@@ -11,20 +11,20 @@ using GFramework.Godot.extensions.signal;
 using GFramework.Godot.ui;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.component;
-using GFrameworkGodotTemplate.scripts.core.ui;
-using GFrameworkGodotTemplate.scripts.cqrs.audio.command;
-using GFrameworkGodotTemplate.scripts.cqrs.audio.command.input;
-using GFrameworkGodotTemplate.scripts.cqrs.graphics.command;
-using GFrameworkGodotTemplate.scripts.cqrs.graphics.command.input;
-using GFrameworkGodotTemplate.scripts.cqrs.setting.command;
-using GFrameworkGodotTemplate.scripts.cqrs.setting.command.input;
-using GFrameworkGodotTemplate.scripts.cqrs.setting.query;
-using GFrameworkGodotTemplate.scripts.enums.ui;
-using global::GFrameworkGodotTemplate.global;
+using MagicaMedusa.scripts.component;
+using MagicaMedusa.scripts.core.ui;
+using MagicaMedusa.scripts.cqrs.audio.command;
+using MagicaMedusa.scripts.cqrs.audio.command.input;
+using MagicaMedusa.scripts.cqrs.graphics.command;
+using MagicaMedusa.scripts.cqrs.graphics.command.input;
+using MagicaMedusa.scripts.cqrs.setting.command;
+using MagicaMedusa.scripts.cqrs.setting.command.input;
+using MagicaMedusa.scripts.cqrs.setting.query;
+using MagicaMedusa.scripts.enums.ui;
+using global::MagicaMedusa.global;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.options_menu;
+namespace MagicaMedusa.scripts.options_menu;
 
 /// <summary>
 ///     选项设置界面控制器

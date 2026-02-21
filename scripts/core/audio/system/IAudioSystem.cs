@@ -12,10 +12,10 @@
 // limitations under the License.
 
 using GFramework.Core.Abstractions.system;
-using GFrameworkGodotTemplate.scripts.enums.audio;
-using global::GFrameworkGodotTemplate.global;
+using MagicaMedusa.scripts.enums.audio;
+using global::MagicaMedusa.global;
 
-namespace GFrameworkGodotTemplate.scripts.core.audio.system;
+namespace MagicaMedusa.scripts.core.audio.system;
 
 /// <summary>
 /// 音频系统接口

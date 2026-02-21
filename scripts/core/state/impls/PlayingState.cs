@@ -1,9 +1,9 @@
-using GFramework.Core.Abstractions.state;
+﻿using GFramework.Core.Abstractions.state;
 using GFramework.Core.state;
 using GFramework.Game.Abstractions.ui;
-using GFrameworkGodotTemplate.scripts.tests;
+using MagicaMedusa.scripts.tests;
 
-namespace GFrameworkGodotTemplate.scripts.core.state.impls;
+namespace MagicaMedusa.scripts.core.state.impls;
 
 /// <summary>
 ///     游戏进行中状态

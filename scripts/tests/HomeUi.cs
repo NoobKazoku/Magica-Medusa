@@ -1,4 +1,4 @@
-using GFramework.Core.Abstractions.controller;
+﻿using GFramework.Core.Abstractions.controller;
 using GFramework.Core.Abstractions.coroutine;
 using GFramework.Game.Abstractions.enums;
 using GFramework.Game.Abstractions.scene;
@@ -7,13 +7,13 @@ using GFramework.Godot.coroutine;
 using GFramework.Godot.ui;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.core.ui;
-using GFrameworkGodotTemplate.scripts.enums.scene;
-using GFrameworkGodotTemplate.scripts.enums.ui;
-using global::GFrameworkGodotTemplate.global;
+using MagicaMedusa.scripts.core.ui;
+using MagicaMedusa.scripts.enums.scene;
+using MagicaMedusa.scripts.enums.ui;
+using global::MagicaMedusa.global;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.tests;
+namespace MagicaMedusa.scripts.tests;
 
 [ContextAware]
 [Log]

@@ -14,9 +14,9 @@
 using GFramework.Core.cqrs.command;
 using GFramework.Game.Abstractions.enums;
 using GFramework.Game.Abstractions.ui;
-using GFrameworkGodotTemplate.scripts.pause_menu;
+using MagicaMedusa.scripts.pause_menu;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.pause_menu.command;
+namespace MagicaMedusa.scripts.cqrs.pause_menu.command;
 
 /// <summary>
 ///     打开暂停菜单命令处理器类，负责处理打开暂停菜单的命令逻辑

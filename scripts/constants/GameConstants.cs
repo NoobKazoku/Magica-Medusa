@@ -1,4 +1,4 @@
-﻿namespace GFrameworkGodotTemplate.scripts.constants;
+﻿namespace MagicaMedusa.scripts.constants;
 
 public static class GameConstants
 {

@@ -15,11 +15,11 @@ using GFramework.Core.Abstractions.coroutine;
 using GFramework.Game.Abstractions.scene;
 using GFramework.Godot.coroutine;
 using GFramework.SourceGenerators.Abstractions.logging;
-using GFrameworkGodotTemplate.scripts.enums.scene;
-using global::GFrameworkGodotTemplate.global;
+using MagicaMedusa.scripts.enums.scene;
+using global::MagicaMedusa.global;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.core.scene;
+namespace MagicaMedusa.scripts.core.scene;
 
 /// <summary>
 /// 场景过渡动画处理器，将 SceneTransitionManager 的过渡效果接入管道。

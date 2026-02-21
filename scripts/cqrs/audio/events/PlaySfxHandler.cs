@@ -1,4 +1,4 @@
-// Copyright (c) 2026 GeWuYou
+﻿// Copyright (c) 2026 GeWuYou
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -12,9 +12,9 @@
 // limitations under the License.
 
 using GFramework.Core.cqrs.notification;
-using GFrameworkGodotTemplate.scripts.core.audio.system;
+using MagicaMedusa.scripts.core.audio.system;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.audio.events;
+namespace MagicaMedusa.scripts.cqrs.audio.events;
 
 /// <summary>
 /// 音效播放事件处理器

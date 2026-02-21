@@ -1,4 +1,4 @@
-using GFramework.Core.Abstractions.architecture;
+﻿using GFramework.Core.Abstractions.architecture;
 using GFramework.Core.Abstractions.logging;
 using GFramework.Core.Abstractions.properties;
 using GFramework.Core.Abstractions.state;
@@ -11,17 +11,17 @@ using GFramework.Godot.scene;
 using GFramework.Godot.ui;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.core;
-using GFrameworkGodotTemplate.scripts.core.environment;
-using GFrameworkGodotTemplate.scripts.core.resource;
-using GFrameworkGodotTemplate.scripts.core.state.impls;
-using GFrameworkGodotTemplate.scripts.cqrs.setting.command;
-using GFrameworkGodotTemplate.scripts.enums.scene;
-using GFrameworkGodotTemplate.scripts.utility;
+using MagicaMedusa.scripts.core;
+using MagicaMedusa.scripts.core.environment;
+using MagicaMedusa.scripts.core.resource;
+using MagicaMedusa.scripts.core.state.impls;
+using MagicaMedusa.scripts.cqrs.setting.command;
+using MagicaMedusa.scripts.enums.scene;
+using MagicaMedusa.scripts.utility;
 using Godot;
 using Godot.Collections;
 
-namespace GFrameworkGodotTemplate.global;
+namespace MagicaMedusa.global;
 
 /// <summary>
 ///     游戏入口点节点类，负责初始化游戏架构和管理全局游戏状态

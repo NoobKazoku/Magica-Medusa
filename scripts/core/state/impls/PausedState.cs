@@ -1,6 +1,6 @@
-using GFramework.Core.state;
+﻿using GFramework.Core.state;
 
-namespace GFrameworkGodotTemplate.scripts.core.state.impls;
+namespace MagicaMedusa.scripts.core.state.impls;
 
 /// <summary>
 ///     表示一个暂停状态的实现类，继承自 ContextAwareStateBase。

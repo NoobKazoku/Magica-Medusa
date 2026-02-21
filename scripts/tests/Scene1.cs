@@ -1,4 +1,4 @@
-// Copyright (c) 2026 GeWuYou
+﻿// Copyright (c) 2026 GeWuYou
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -16,11 +16,11 @@ using GFramework.Game.Abstractions.scene;
 using GFramework.Godot.scene;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.core.scene;
-using GFrameworkGodotTemplate.scripts.enums.scene;
+using MagicaMedusa.scripts.core.scene;
+using MagicaMedusa.scripts.enums.scene;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.tests;
+namespace MagicaMedusa.scripts.tests;
 
 [ContextAware]
 [Log]

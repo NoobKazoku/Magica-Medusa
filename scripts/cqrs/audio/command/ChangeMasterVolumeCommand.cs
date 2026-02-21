@@ -1,8 +1,8 @@
-using GFramework.Core.cqrs.command;
-using GFrameworkGodotTemplate.scripts.cqrs.audio.command.input;
+﻿using GFramework.Core.cqrs.command;
+using MagicaMedusa.scripts.cqrs.audio.command.input;
 using Unit = Mediator.Unit;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.audio.command;
+namespace MagicaMedusa.scripts.cqrs.audio.command;
 
 /// <summary>
 ///     更改主音量命令类

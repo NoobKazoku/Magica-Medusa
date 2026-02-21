@@ -1,4 +1,4 @@
-using GFramework.Core.Abstractions.controller;
+﻿using GFramework.Core.Abstractions.controller;
 using GFramework.Core.Abstractions.state;
 using GFramework.Game.Abstractions.enums;
 using GFramework.Game.Abstractions.ui;
@@ -6,15 +6,15 @@ using GFramework.Godot.coroutine;
 using GFramework.Godot.ui;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.core.state.impls;
-using GFrameworkGodotTemplate.scripts.core.ui;
-using GFrameworkGodotTemplate.scripts.cqrs.game.command;
-using GFrameworkGodotTemplate.scripts.cqrs.menu.command;
-using GFrameworkGodotTemplate.scripts.cqrs.pause_menu.command.input;
-using GFrameworkGodotTemplate.scripts.enums.ui;
+using MagicaMedusa.scripts.core.state.impls;
+using MagicaMedusa.scripts.core.ui;
+using MagicaMedusa.scripts.cqrs.game.command;
+using MagicaMedusa.scripts.cqrs.menu.command;
+using MagicaMedusa.scripts.cqrs.pause_menu.command.input;
+using MagicaMedusa.scripts.enums.ui;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.pause_menu;
+namespace MagicaMedusa.scripts.pause_menu;
 
 [ContextAware]
 [Log]

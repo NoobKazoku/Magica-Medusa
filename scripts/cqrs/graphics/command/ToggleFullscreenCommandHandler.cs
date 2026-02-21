@@ -17,7 +17,7 @@ using GFramework.Game.Abstractions.setting.data;
 using GFramework.Godot.setting;
 using Unit = Mediator.Unit;
 
-namespace GFrameworkGodotTemplate.scripts.cqrs.graphics.command;
+namespace MagicaMedusa.scripts.cqrs.graphics.command;
 
 /// <summary>
 ///     切换全屏模式命令处理器类

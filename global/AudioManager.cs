@@ -1,12 +1,12 @@
-using GFramework.Core.Abstractions.controller;
+﻿using GFramework.Core.Abstractions.controller;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
-using GFrameworkGodotTemplate.scripts.constants;
-using GFrameworkGodotTemplate.scripts.core.audio.system;
-using GFrameworkGodotTemplate.scripts.enums.audio;
+using MagicaMedusa.scripts.constants;
+using MagicaMedusa.scripts.core.audio.system;
+using MagicaMedusa.scripts.enums.audio;
 using Godot;
 
-namespace GFrameworkGodotTemplate.global;
+namespace MagicaMedusa.global;
 
 [ContextAware]
 [Log]

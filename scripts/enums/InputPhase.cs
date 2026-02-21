@@ -11,7 +11,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace GFrameworkGodotTemplate.scripts.enums;
+namespace MagicaMedusa.scripts.enums;
 
 /// <summary>
 ///     定义输入处理的不同阶段，用于区分游戏逻辑中输入事件的优先级和状态。

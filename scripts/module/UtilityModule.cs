@@ -6,11 +6,11 @@ using GFramework.Game.serializer;
 using GFramework.Godot.scene;
 using GFramework.Godot.storage;
 using GFramework.Godot.ui;
-using GFrameworkGodotTemplate.scripts.data;
-using GFrameworkGodotTemplate.scripts.utility;
+using MagicaMedusa.scripts.data;
+using MagicaMedusa.scripts.utility;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.module;
+namespace MagicaMedusa.scripts.module;
 
 /// <summary>
 ///     工具模块类，负责安装和管理游戏中的实用工具组件

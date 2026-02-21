@@ -14,6 +14,6 @@
 using GFramework.Game.Abstractions.asset;
 using Godot;
 
-namespace GFrameworkGodotTemplate.scripts.utility;
+namespace MagicaMedusa.scripts.utility;
 
 public interface IGodotTextureRegistry : IAssetRegistry<Texture>;
