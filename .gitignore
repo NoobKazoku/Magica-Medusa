@@ -26,3 +26,5 @@ Magica-Medusa.sln.DotSettings.user
 addons/*
 !addons/.editorconfig
 .addons/*
+
+.claude/

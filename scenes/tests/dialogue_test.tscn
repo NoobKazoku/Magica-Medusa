@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://dialogue_test_scene"]
+
+[ext_resource type="Script" path="res://scripts/tests/DialogueTest.cs" id="1_test"]
+[ext_resource type="Theme" uid="uid://drg0lvsgoqfsc" path="res://resource/theme/project_theme.tres" id="2_theme"]
+
+[node name="DialogueTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_test")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.25, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_theme")
+theme_override_font_sizes/font_size = 48
+text = "对话系统测试"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_theme")
+theme_override_font_sizes/font_size = 20
+text = "点击按钮测试不同的对话场景"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TestButton1" type="Button" parent="CenterContainer/VBoxContainer/ButtonContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+theme = ExtResource("2_theme")
+theme_override_font_sizes/font_size = 24
+text = "测试1：简单对话"
+
+[node name="TestButton2" type="Button" parent="CenterContainer/VBoxContainer/ButtonContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+theme = ExtResource("2_theme")
+theme_override_font_sizes/font_size = 24
+text = "测试2：多句对话"
+
+[node name="TestButton3" type="Button" parent="CenterContainer/VBoxContainer/ButtonContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+theme = ExtResource("2_theme")
+theme_override_font_sizes/font_size = 24
+text = "测试3：带头像对话"
+
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Instructions" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 2
+theme = ExtResource("2_theme")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]使用说明：
+• 点击按钮启动对话
+• 对话打字中点击鼠标左键快进
+• 打字完成后点击鼠标左键推进对话
+• 也可以使用空格键或回车键进行交互[/center]"
+fit_content = true
+scroll_active = false
