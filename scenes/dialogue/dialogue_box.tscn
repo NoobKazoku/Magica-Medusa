@@ -86,7 +86,12 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
-
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dialogue"]
+_data = {
+"RESET": SubResource("Animation_RESET"),
+"slide_in": SubResource("Animation_slide_in"),
+"slide_out": SubResource("Animation_slide_out")
+}
 [node name="DialogueBox" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -164,12 +169,7 @@ text = "对话内容显示在这里..."
 fit_content = true
 scroll_active = false
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dialogue"]
-_data = {
-"RESET": SubResource("Animation_RESET"),
-"slide_in": SubResource("Animation_slide_in"),
-"slide_out": SubResource("Animation_slide_out")
-}
+
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
