@@ -85,14 +85,20 @@ public partial class DialogueManager : AbstractSystem
         if (_currentSequence == null || _dialogueBox == null)
             return;
 
+        _log.Debug($"ShowCurrentDialogueAsync: index={_currentIndex}");
         var dialogue = _currentSequence.Dialogues[_currentIndex];
-        _dialogueBox.SetDialogue(dialogue);
 
         // 如果是第一句对话，需要显示对话框
         if (_currentIndex == 0)
         {
+            _log.Debug("ShowCurrentDialogueAsync: Showing dialogue box");
             await _dialogueBox.ShowAsync();
+            _log.Debug("ShowCurrentDialogueAsync: Dialogue box shown");
         }
+
+        _log.Debug("ShowCurrentDialogueAsync: Setting dialogue content");
+        _dialogueBox.SetDialogue(dialogue);
+        _log.Debug("ShowCurrentDialogueAsync: Dialogue content set");
     }
 
     protected override void OnInit()

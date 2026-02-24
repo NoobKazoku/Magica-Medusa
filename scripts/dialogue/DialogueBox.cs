@@ -67,6 +67,7 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
 
     public override void _Ready()
     {
+        _log.Debug("DialogueBox _Ready called");
         _audioSystem = this.GetSystem<IAudioSystem>();
         Visible = false;
     }
@@ -140,9 +141,22 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
     /// </summary>
     public async Task ShowAsync()
     {
+        _log.Debug("ShowAsync: Starting to show dialogue box");
         Visible = true;
+
+        // 检查动画播放器是否有动画
+        if (!AnimationPlayer.HasAnimation("slide_in"))
+        {
+            _log.Error("ShowAsync: Animation 'slide_in' not found!");
+            return;
+        }
+
+        _log.Debug("ShowAsync: Playing slide_in animation");
         AnimationPlayer.Play("slide_in");
+
+        _log.Debug("ShowAsync: Waiting for animation to finish");
         await ToSignal(AnimationPlayer, AnimationPlayer.SignalName.AnimationFinished);
+        _log.Debug("ShowAsync: Animation finished");
     }
 
     /// <summary>
@@ -161,6 +175,7 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
     /// <param name="dialogue">对话数据</param>
     public void SetDialogue(DialogueData dialogue)
     {
+        _log.Debug($"SetDialogue: Speaker={dialogue.SpeakerName}, Text={dialogue.Text}");
         _currentDialogue = dialogue;
 
         // 设置说话者名称
@@ -196,5 +211,6 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
         _typewriterTimer = 0f;
         _visibleCharacters = 0;
         _sfxTimer = 0f;
+        _log.Debug("SetDialogue: Typewriter effect started");
     }
 }
