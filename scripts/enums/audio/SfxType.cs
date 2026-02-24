@@ -18,5 +18,10 @@ public enum SfxType
     /// <summary>
     ///     用户界面点击音效
     /// </summary>
-    UiClick
+    UiClick,
+
+    /// <summary>
+    ///     对话框打字机音效
+    /// </summary>
+    DialogueTypewriter
 }

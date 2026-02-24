@@ -39,5 +39,13 @@ public enum UiKey
     /// </remarks>
     Credits,
     HomeUi,
-    PauseMenu
+    PauseMenu,
+
+    /// <summary>
+    ///     对话框界面键值
+    /// </summary>
+    /// <remarks>
+    ///     表示对话框相关的界面状态或操作类型
+    /// </remarks>
+    DialogueBox
 }

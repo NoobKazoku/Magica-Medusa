@@ -4,6 +4,7 @@ using GFramework.Game.setting;
 using MagicaMedusa.scripts.core.audio.system;
 using MagicaMedusa.scripts.core.scene;
 using MagicaMedusa.scripts.core.ui;
+using MagicaMedusa.scripts.dialogue;
 
 namespace MagicaMedusa.scripts.module;
 
@@ -23,5 +24,6 @@ public class SystemModule : AbstractModule
         architecture.RegisterSystem(new SceneRouter());
         architecture.RegisterSystem(new SettingsSystem());
         architecture.RegisterSystem(new GodotAudioSystem());
+        architecture.RegisterSystem(new DialogueManager());
     }
 }
