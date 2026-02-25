@@ -1,9 +1,14 @@
 using GFramework.Core.Abstractions.controller;
+using GFramework.Game.Abstractions.enums;
+using GFramework.Game.Abstractions.ui;
+using GFramework.Godot.ui;
 using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
 using MagicaMedusa.scripts.cqrs.dialogue.command;
 using MagicaMedusa.scripts.dialogue;
 using Godot;
+using MagicaMedusa.scripts.core.ui;
+using MagicaMedusa.scripts.enums.ui;
 
 namespace MagicaMedusa.scripts.tests;
 
@@ -12,15 +17,31 @@ namespace MagicaMedusa.scripts.tests;
 /// </summary>
 [ContextAware]
 [Log]
-public partial class DialogueTest : Control, IController
+public partial class DialogueTest : Control, IController, IUiPageBehaviorProvider, ISimpleUiPage
 {
+    /// <summary>
+    ///     页面行为实例的私有字段
+    /// </summary>
+    private IUiPageBehavior? _page;
     private Button TestButton1 => GetNode<Button>("%TestButton1");
     private Button TestButton2 => GetNode<Button>("%TestButton2");
     private Button TestButton3 => GetNode<Button>("%TestButton3");
-
+    /// <summary>
+    ///     Ui Key的字符串形式
+    /// </summary>
+    public static string UiKeyStr => nameof(UiKey.DialogueTest);
     public override void _Ready()
     {
         SetupEventHandlers();
+    }
+    /// <summary>
+    ///     获取页面行为实例，如果不存在则创建新的CanvasItemUiPageBehavior实例
+    /// </summary>
+    /// <returns>返回IUiPageBehavior类型的页面行为实例</returns>
+    public IUiPageBehavior GetPage()
+    {
+        _page ??= UiPageBehaviorFactory.Create<Control>(this, UiKeyStr, UiLayer.Modal);
+        return _page;
     }
 
     private void SetupEventHandlers()

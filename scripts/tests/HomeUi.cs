@@ -25,12 +25,16 @@ public partial class HomeUi : Control, IController, IUiPageBehaviorProvider, ISi
     private IUiPageBehavior? _page;
 
     private ISceneRouter _sceneRouter = null!;
+    
+    private IUiRouter _uiRouter = null!;
 
     private Button Scene1Button => GetNode<Button>("%Scene1Button");
 
     private Button Scene2Button => GetNode<Button>("%Scene2Button");
 
     private Button HomeUiButton => GetNode<Button>("%HomeButton");
+    
+    private Button DialogueTestButton => GetNode<Button>("%DialogueTestButton");
 
     /// <summary>
     ///     Ui Key的字符串形式
@@ -72,6 +76,7 @@ public partial class HomeUi : Control, IController, IUiPageBehaviorProvider, ISi
         Hide();
         await GameEntryPoint.Architecture.WaitUntilReadyAsync().ConfigureAwait(false);
         _sceneRouter = this.GetSystem<ISceneRouter>()!;
+        _uiRouter = this.GetSystem<IUiRouter>()!;
 
         // 在此添加就绪逻辑
         SetupEventHandlers();
@@ -90,6 +95,7 @@ public partial class HomeUi : Control, IController, IUiPageBehaviorProvider, ISi
         Scene1Button.Pressed += () => SwitchScene(nameof(SceneKey.Scene1));
         Scene2Button.Pressed += () => SwitchScene(nameof(SceneKey.Scene2));
         HomeUiButton.Pressed += () => SwitchScene(nameof(SceneKey.Home));
+        DialogueTestButton.Pressed += () => _uiRouter.Show(DialogueTest.UiKeyStr, UiLayer.Modal);
         return;
 
         IEnumerator<IYieldInstruction> ReplaceScene(string key)

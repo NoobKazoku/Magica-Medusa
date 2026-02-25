@@ -47,5 +47,6 @@ public enum UiKey
     /// <remarks>
     ///     表示对话框相关的界面状态或操作类型
     /// </remarks>
-    DialogueBox
+    DialogueBox,
+    DialogueTest,
 }
