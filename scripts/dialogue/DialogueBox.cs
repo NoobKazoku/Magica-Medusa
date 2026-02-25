@@ -189,15 +189,19 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
         // 设置头像
         if (dialogue.AvatarTextureKey is not null)
         {
-            if (_textureRegistry.Get(nameof(dialogue.AvatarTextureKey)) is Texture2D texture)
+            var textureKey = dialogue.AvatarTextureKey.Value;
+            _log.Debug($"SetDialogue: Loading avatar texture with key={textureKey}");
+
+            if (_textureRegistry.Get(textureKey.ToString()) is Texture2D texture)
             {
                 AvatarTexture.Texture = texture;
                 AvatarTexture.Visible = true;
+                _log.Debug("SetDialogue: Avatar texture loaded successfully");
             }
             else
             {
                 AvatarTexture.Visible = false;
-                _log.Warn($"Failed to load avatar texture: {dialogue.AvatarTextureKey}");
+                _log.Warn($"Failed to load avatar texture: {textureKey}");
             }
         }
         else
