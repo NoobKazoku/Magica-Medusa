@@ -46,7 +46,7 @@ public class StartDialogueCommandHandler : AbstractCommandHandler<StartDialogueC
     private async Task StartDialogueAsync(DialogueSequence sequence)
     {
         // 打开对话框UI
-        await _uiRouter!.PushAsync(nameof(UiKey.DialogueBox)).ConfigureAwait(false);
+        await _uiRouter!.PushAsync(nameof(UiKey.DialogueBox)).ConfigureAwait(true);
 
         // 获取对话框实例
         if (_uiRouter.Peek()!.View is not DialogueBox dialogueBox)
@@ -55,6 +55,6 @@ public class StartDialogueCommandHandler : AbstractCommandHandler<StartDialogueC
         }
 
         // 开始对话序列
-        await _dialogueManager!.StartDialogueAsync(sequence, dialogueBox).ConfigureAwait(false);
+        await _dialogueManager!.StartDialogueAsync(sequence, dialogueBox).ConfigureAwait(true);
     }
 }
