@@ -11,5 +11,5 @@ public class StartDialogueCommand : ICommand
     /// <summary>
     ///     对话序列数据
     /// </summary>
-    public DialogueSequence Sequence { get; set; } = null!;
+    public DialogueSequence Sequence { get; init; } = null!;
 }

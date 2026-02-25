@@ -37,8 +37,3 @@ text = "场景2"
 unique_name_in_owner = true
 layout_mode = 2
 text = "主场景"
-
-[node name="DialogueTestButton" type="Button" parent="CenterContainer/HBoxContainer" unique_id=876125653]
-unique_name_in_owner = true
-layout_mode = 2
-text = "对话测试ui"

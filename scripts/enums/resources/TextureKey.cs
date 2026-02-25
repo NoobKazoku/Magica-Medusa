@@ -15,5 +15,6 @@ namespace MagicaMedusa.scripts.enums.resources;
 
 public enum TextureKey
 {
-    GodotStart
+    GodotStart,
+    TestTexture1
 }

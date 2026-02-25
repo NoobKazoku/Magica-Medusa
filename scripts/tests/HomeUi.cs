@@ -25,8 +25,6 @@ public partial class HomeUi : Control, IController, IUiPageBehaviorProvider, ISi
     private IUiPageBehavior? _page;
 
     private ISceneRouter _sceneRouter = null!;
-    
-    private IUiRouter _uiRouter = null!;
 
     private Button Scene1Button => GetNode<Button>("%Scene1Button");
 
@@ -76,7 +74,6 @@ public partial class HomeUi : Control, IController, IUiPageBehaviorProvider, ISi
         Hide();
         await GameEntryPoint.Architecture.WaitUntilReadyAsync().ConfigureAwait(false);
         _sceneRouter = this.GetSystem<ISceneRouter>()!;
-        _uiRouter = this.GetSystem<IUiRouter>()!;
 
         // 在此添加就绪逻辑
         SetupEventHandlers();
@@ -95,7 +92,6 @@ public partial class HomeUi : Control, IController, IUiPageBehaviorProvider, ISi
         Scene1Button.Pressed += () => SwitchScene(nameof(SceneKey.Scene1));
         Scene2Button.Pressed += () => SwitchScene(nameof(SceneKey.Scene2));
         HomeUiButton.Pressed += () => SwitchScene(nameof(SceneKey.Home));
-        DialogueTestButton.Pressed += () => _uiRouter.PushAsync(DialogueTest.UiKeyStr).AsTask().ToCoroutineEnumerator().RunCoroutine();
         return;
 
         IEnumerator<IYieldInstruction> ReplaceScene(string key)
