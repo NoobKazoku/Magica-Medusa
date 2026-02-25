@@ -36,10 +36,10 @@ public class EndDialogueCommandHandler : AbstractCommandHandler<EndDialogueComma
     private async Task EndDialogueAsync()
     {
         // 结束对话
-        await _dialogueManager!.EndDialogueAsync().ConfigureAwait(false);
+        await _dialogueManager!.EndDialogueAsync().ConfigureAwait(true);
 
         // 关闭对话框UI
-        await _uiRouter!.PopAsync().ConfigureAwait(false);
+        await _uiRouter!.PopAsync().ConfigureAwait(true);
 
         // 恢复游戏
         GameUtil.GetTree().Paused = false;
