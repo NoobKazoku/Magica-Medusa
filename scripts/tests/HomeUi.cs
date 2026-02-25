@@ -95,7 +95,7 @@ public partial class HomeUi : Control, IController, IUiPageBehaviorProvider, ISi
         Scene1Button.Pressed += () => SwitchScene(nameof(SceneKey.Scene1));
         Scene2Button.Pressed += () => SwitchScene(nameof(SceneKey.Scene2));
         HomeUiButton.Pressed += () => SwitchScene(nameof(SceneKey.Home));
-        DialogueTestButton.Pressed += () => _uiRouter.Show(DialogueTest.UiKeyStr, UiLayer.Modal);
+        DialogueTestButton.Pressed += () => _uiRouter.PushAsync(DialogueTest.UiKeyStr).AsTask().ToCoroutineEnumerator().RunCoroutine();
         return;
 
         IEnumerator<IYieldInstruction> ReplaceScene(string key)
