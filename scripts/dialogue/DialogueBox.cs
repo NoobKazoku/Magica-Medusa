@@ -73,6 +73,8 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
         _audioSystem = this.GetSystem<IAudioSystem>();
         _textureRegistry = this.GetUtility<IGodotTextureRegistry>()!;
         Visible = false;
+        DialogueTextLabel.Text = string.Empty;
+        SpeakerNameLabel.Text = string.Empty;
     }
 
     public override void _Process(double delta)
