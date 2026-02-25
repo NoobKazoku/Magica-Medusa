@@ -3,6 +3,9 @@ using GFramework.SourceGenerators.Abstractions.logging;
 using GFramework.SourceGenerators.Abstractions.rule;
 using MagicaMedusa.scripts.cqrs.dialogue.command;
 using Godot;
+using Godot.Collections;
+using MagicaMedusa.scripts.enums.resources;
+using Array = Godot.Collections.Array;
 
 namespace MagicaMedusa.scripts.dialogue;
 
@@ -31,7 +34,7 @@ public partial class DialogueTrigger : Area2D, IController
     ///     头像路径数组（可选）
     /// </summary>
     [Export]
-    public string[] AvatarPaths { get; set; } = [];
+    public Array<TextureKey> AvatarTextureKeys { get; set; }=[];
 
     /// <summary>
     ///     是否只触发一次
@@ -79,10 +82,10 @@ public partial class DialogueTrigger : Area2D, IController
         // 构建对话序列
         var sequence = new DialogueSequence
         {
-            PauseGameDuringDialogue = PauseGameDuringDialogue
+            PauseGameDuringDialogue = PauseGameDuringDialogue,
         };
 
-        for (int i = 0; i < DialogueTexts.Length; i++)
+        for (var i = 0; i < DialogueTexts.Length; i++)
         {
             var dialogue = new DialogueData
             {
@@ -91,9 +94,9 @@ public partial class DialogueTrigger : Area2D, IController
             };
 
             // 如果有头像路径，设置头像
-            if (AvatarPaths.Length > i && !string.IsNullOrEmpty(AvatarPaths[i]))
+            if (AvatarTextureKeys.Count > i)
             {
-                dialogue.AvatarPath = AvatarPaths[i];
+                dialogue.AvatarTextureKey = AvatarTextureKeys[i];
             }
 
             sequence.Dialogues.Add(dialogue);

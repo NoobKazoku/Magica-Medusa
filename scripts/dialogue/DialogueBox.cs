@@ -10,6 +10,7 @@ using MagicaMedusa.scripts.enums.audio;
 using MagicaMedusa.scripts.enums.ui;
 using Godot;
 using MagicaMedusa.scripts.core.ui;
+using MagicaMedusa.scripts.utility;
 
 namespace MagicaMedusa.scripts.dialogue;
 
@@ -28,6 +29,7 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
     private int _visibleCharacters;
     private float _sfxTimer;
     private IAudioSystem? _audioSystem;
+    private IGodotTextureRegistry _textureRegistry = null!;
 
     /// <summary>
     ///     背景面板节点
@@ -69,6 +71,7 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
     {
         _log.Debug("DialogueBox _Ready called");
         _audioSystem = this.GetSystem<IAudioSystem>();
+        _textureRegistry = this.GetUtility<IGodotTextureRegistry>()!;
         Visible = false;
     }
 
@@ -118,22 +121,20 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
             return;
 
         // 检测鼠标点击或确认键
-        if (@event is InputEventMouseButton mouseButton && mouseButton.Pressed && mouseButton.ButtonIndex == MouseButton.Left
-            || @event.IsActionPressed("ui_accept"))
+        if (@event is not InputEventMouseButton { Pressed: true, ButtonIndex: MouseButton.Left } &&
+            !@event.IsActionPressed("ui_accept")) return;
+        if (_isTyping)
         {
-            if (_isTyping)
-            {
-                // 打字中，跳过打字机效果
-                _skipTypewriter = true;
-            }
-            else
-            {
-                // 打字完成，推进对话
-                this.SendCommand(new AdvanceDialogueCommand());
-            }
-
-            AcceptEvent();
+            // 打字中，跳过打字机效果
+            _skipTypewriter = true;
         }
+        else
+        {
+            // 打字完成，推进对话
+            this.SendCommand(new AdvanceDialogueCommand());
+        }
+
+        AcceptEvent();
     }
 
     /// <summary>
@@ -155,7 +156,7 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
         AnimationPlayer.Play("slide_in");
 
         _log.Debug("ShowAsync: Waiting for animation to finish");
-        await ToSignal(AnimationPlayer, AnimationPlayer.SignalName.AnimationFinished);
+        await ToSignal(AnimationPlayer, AnimationMixer.SignalName.AnimationFinished);
         _log.Debug("ShowAsync: Animation finished");
     }
 
@@ -165,7 +166,7 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
     public async Task HideAsync()
     {
         AnimationPlayer.Play("slide_out");
-        await ToSignal(AnimationPlayer, AnimationPlayer.SignalName.AnimationFinished);
+        await ToSignal(AnimationPlayer, AnimationMixer.SignalName.AnimationFinished);
         Visible = false;
     }
 
@@ -186,10 +187,9 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
         DialogueTextLabel.VisibleCharacters = 0;
 
         // 设置头像
-        if (!string.IsNullOrEmpty(dialogue.AvatarPath))
+        if (dialogue.AvatarTextureKey is not null)
         {
-            var texture = GD.Load<Texture2D>(dialogue.AvatarPath);
-            if (texture != null)
+            if (_textureRegistry.Get(nameof(dialogue.AvatarTextureKey)) is Texture2D texture)
             {
                 AvatarTexture.Texture = texture;
                 AvatarTexture.Visible = true;
@@ -197,7 +197,7 @@ public partial class DialogueBox : Control, IController, IUiPageBehaviorProvider
             else
             {
                 AvatarTexture.Visible = false;
-                _log.Warn($"Failed to load avatar texture: {dialogue.AvatarPath}");
+                _log.Warn($"Failed to load avatar texture: {dialogue.AvatarTextureKey}");
             }
         }
         else

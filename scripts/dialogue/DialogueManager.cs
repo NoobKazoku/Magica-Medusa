@@ -18,7 +18,7 @@ public partial class DialogueManager : AbstractSystem
     /// </summary>
     /// <param name="sequence">对话序列</param>
     /// <param name="dialogueBox">对话框实例</param>
-    public async Task StartDialogueAsync(DialogueSequence sequence, DialogueBox dialogueBox)
+    public async Task StartDialogueAsync(DialogueSequence? sequence, DialogueBox dialogueBox)
     {
         if (sequence == null || sequence.Dialogues.Count == 0)
         {
@@ -33,7 +33,7 @@ public partial class DialogueManager : AbstractSystem
         _log.Debug($"Starting dialogue sequence with {sequence.Dialogues.Count} dialogues");
 
         // 显示第一句对话
-        await ShowCurrentDialogueAsync();
+        await ShowCurrentDialogueAsync().ConfigureAwait(true);
     }
 
     /// <summary>
@@ -57,7 +57,7 @@ public partial class DialogueManager : AbstractSystem
         }
 
         _log.Debug($"Advancing to dialogue {_currentIndex + 1}/{_currentSequence.Dialogues.Count}");
-        await ShowCurrentDialogueAsync();
+        await ShowCurrentDialogueAsync().ConfigureAwait(true);
         return true;
     }
 
@@ -69,7 +69,7 @@ public partial class DialogueManager : AbstractSystem
         if (_dialogueBox != null)
         {
             _log.Debug("Ending dialogue sequence");
-            await _dialogueBox.HideAsync();
+            await _dialogueBox.HideAsync().ConfigureAwait(true);
         }
 
         _currentSequence = null;
@@ -92,7 +92,7 @@ public partial class DialogueManager : AbstractSystem
         if (_currentIndex == 0)
         {
             _log.Debug("ShowCurrentDialogueAsync: Showing dialogue box");
-            await _dialogueBox.ShowAsync();
+            await _dialogueBox.ShowAsync().ConfigureAwait(true);
             _log.Debug("ShowCurrentDialogueAsync: Dialogue box shown");
         }
 

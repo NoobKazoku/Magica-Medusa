@@ -1,3 +1,6 @@
+using MagicaMedusa.scripts.enums.resources;
+using MagicaMedusa.scripts.enums.scene;
+
 namespace MagicaMedusa.scripts.dialogue;
 
 /// <summary>
@@ -18,7 +21,7 @@ public class DialogueData
     /// <summary>
     ///     头像路径（可选）
     /// </summary>
-    public string? AvatarPath { get; set; }
+    public TextureKey? AvatarTextureKey { get; set; }
 
     /// <summary>
     ///     打字速度（字符/秒），默认30
@@ -34,7 +37,7 @@ public class DialogueSequence
     /// <summary>
     ///     对话列表
     /// </summary>
-    public List<DialogueData> Dialogues { get; set; } = new();
+    public List<DialogueData> Dialogues { get; init; } = new();
 
     /// <summary>
     ///     是否在对话期间暂停游戏，默认true
