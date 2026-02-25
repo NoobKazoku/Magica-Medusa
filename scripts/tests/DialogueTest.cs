@@ -40,7 +40,7 @@ public partial class DialogueTest : Control, IController, IUiPageBehaviorProvide
     /// <returns>返回IUiPageBehavior类型的页面行为实例</returns>
     public IUiPageBehavior GetPage()
     {
-        _page ??= UiPageBehaviorFactory.Create<Control>(this, UiKeyStr, UiLayer.Modal);
+        _page ??= UiPageBehaviorFactory.Create<Control>(this, UiKeyStr, UiLayer.Page);
         return _page;
     }
 
