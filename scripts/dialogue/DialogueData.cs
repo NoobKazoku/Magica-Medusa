@@ -29,23 +29,3 @@ public class DialogueData
     public float TypewriterSpeed { get; set; } = 30f;
 }
 
-/// <summary>
-///     对话序列，包含一组连续的对话
-/// </summary>
-public class DialogueSequence
-{
-    /// <summary>
-    ///     对话列表
-    /// </summary>
-    public List<DialogueData> Dialogues { get; init; } = new();
-
-    /// <summary>
-    ///     是否在对话期间暂停游戏，默认true
-    /// </summary>
-    public bool PauseGameDuringDialogue { get; set; } = true;
-
-    /// <summary>
-    ///     完成回调ID（可选）
-    /// </summary>
-    public string? OnCompleteCallbackId { get; set; }
-}

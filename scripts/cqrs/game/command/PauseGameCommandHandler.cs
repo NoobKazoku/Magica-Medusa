@@ -41,6 +41,7 @@ public class PauseGameCommandHandler : AbstractCommandHandler<PauseGameCommand>
     public override ValueTask<Unit> Handle(PauseGameCommand command, CancellationToken cancellationToken)
     {
         // 设置游戏树的暂停状态为true，实现游戏暂停功能
+        if (GameUtil.GetTree().Paused) return ValueTask.FromResult(Unit.Value);
         GameUtil.GetTree().Paused = true;
         (_stateMachineSystem ??= this.GetSystem<IStateMachineSystem>())!
             .ChangeToAsync<PausedState>()

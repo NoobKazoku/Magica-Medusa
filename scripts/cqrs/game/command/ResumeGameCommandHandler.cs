@@ -16,6 +16,7 @@ public class ResumeGameCommandHandler : AbstractCommandHandler<ResumeGameCommand
 
     public override ValueTask<Unit> Handle(ResumeGameCommand command, CancellationToken cancellationToken)
     {
+        if (!GameUtil.GetTree().Paused) return ValueTask.FromResult(Unit.Value);
         GameUtil.GetTree().Paused = false;
         (_stateMachineSystem ??= this.GetSystem<IStateMachineSystem>())!
             .ChangeToAsync<PlayingState>()
