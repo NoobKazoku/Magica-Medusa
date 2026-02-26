@@ -1,7 +1,7 @@
 using GFramework.Core.cqrs.command;
 using GFramework.Game.Abstractions.ui;
 using GFramework.Godot.coroutine;
-using MagicaMedusa.scripts.core.utils;
+using MagicaMedusa.scripts.cqrs.game.command;
 using MagicaMedusa.scripts.dialogue;
 using MagicaMedusa.scripts.enums.ui;
 using Unit = Mediator.Unit;
@@ -28,10 +28,10 @@ public class StartDialogueCommandHandler : AbstractCommandHandler<StartDialogueC
         _dialogueManager ??= this.GetSystem<DialogueManager>();
 
         var sequence = command.Sequence;
-        // 如果需要暂停游戏
+        // 如果需要暂停游戏，使用命令系统暂停
         if (sequence is { PauseGameDuringDialogue: true })
         {
-            GameUtil.GetTree().Paused = true;
+            this.SendCommand(new PauseGameCommand());
         }
 
         // 打开对话框UI并开始对话

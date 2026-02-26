@@ -1,10 +1,8 @@
 using GFramework.Core.cqrs.command;
 using GFramework.Game.Abstractions.ui;
 using GFramework.Godot.coroutine;
-using MagicaMedusa.scripts.core.utils;
 using MagicaMedusa.scripts.cqrs.game.command;
 using MagicaMedusa.scripts.dialogue;
-using Mediator;
 using Unit = Mediator.Unit;
 
 namespace MagicaMedusa.scripts.cqrs.dialogue.command;
@@ -41,7 +39,10 @@ public class EndDialogueCommandHandler : AbstractCommandHandler<EndDialogueComma
         // 关闭对话框UI
         await _uiRouter!.PopAsync().ConfigureAwait(true);
 
-        // 恢复游戏
-        await this.SendCommandAsync(new ResumeGameCommand()).ConfigureAwait(true);
+        // 只有对话系统暂停的游戏才恢复
+        if (_dialogueManager.ShouldResumeGame())
+        {
+            await this.SendCommandAsync(new ResumeGameCommand()).ConfigureAwait(true);
+        }
     }
 }
