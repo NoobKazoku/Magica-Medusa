@@ -42,6 +42,6 @@ public class EndDialogueCommandHandler : AbstractCommandHandler<EndDialogueComma
         await _uiRouter!.PopAsync().ConfigureAwait(true);
 
         // 恢复游戏
-        GameUtil.GetTree().Paused = false;
+        await this.SendCommandAsync(new ResumeGameCommand()).ConfigureAwait(true);
     }
 }
