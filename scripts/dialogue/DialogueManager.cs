@@ -1,5 +1,6 @@
 using GFramework.Core.system;
 using GFramework.SourceGenerators.Abstractions.logging;
+using MagicaMedusa.scripts.core.utils;
 
 namespace MagicaMedusa.scripts.dialogue;
 
@@ -12,6 +13,7 @@ public partial class DialogueManager : AbstractSystem
     private DialogueSequence? _currentSequence;
     private int _currentIndex;
     private DialogueBox? _dialogueBox;
+    private bool _didPauseGame; // 追踪是否由对话系统暂停的游戏
 
     /// <summary>
     ///     开始对话序列
@@ -30,7 +32,10 @@ public partial class DialogueManager : AbstractSystem
         _currentIndex = 0;
         _dialogueBox = dialogueBox;
 
-        _log.Debug($"Starting dialogue sequence with {sequence.Dialogues.Count} dialogues");
+        // 记录是否由对话系统暂停游戏（只有在游戏未暂停且配置要求暂停时才记录）
+        _didPauseGame = sequence.PauseGameDuringDialogue && !GameUtil.GetTree().Paused;
+
+        _log.Debug($"Starting dialogue sequence with {sequence.Dialogues.Count} dialogues, didPauseGame={_didPauseGame}");
 
         // 显示第一句对话
         await ShowCurrentDialogueAsync().ConfigureAwait(true);
@@ -75,6 +80,17 @@ public partial class DialogueManager : AbstractSystem
         _currentSequence = null;
         _currentIndex = 0;
         _dialogueBox = null;
+        // 注意：不在这里重置 _didPauseGame，由 EndDialogueCommandHandler 使用后重置
+    }
+
+    /// <summary>
+    ///     检查是否应该恢复游戏（只有对话系统暂停的才恢复）
+    /// </summary>
+    public bool ShouldResumeGame()
+    {
+        var shouldResume = _didPauseGame;
+        _didPauseGame = false; // 重置标志
+        return shouldResume;
     }
 
     /// <summary>
