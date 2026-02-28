@@ -70,6 +70,10 @@ public partial class GameEntryPoint : Node
                 {
                     MinLevel = LogLevel.Debug
                 }
+            },
+            ArchitectureProperties = new ArchitectureProperties
+            {
+                EnableEcs = true
             }
         }, IsDev ? new GameDevEnvironment() : new GameMainEnvironment());
         Architecture.Initialize();
