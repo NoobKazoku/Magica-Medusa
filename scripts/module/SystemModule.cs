@@ -8,8 +8,7 @@ using MagicaMedusa.scripts.dialogue;
 namespace MagicaMedusa.scripts.module;
 
 /// <summary>
-///     系统Godot模块类，负责安装和注册游戏所需的各种系统组件
-///     继承自AbstractGodotModule，用于在游戏架构中集成系统功能
+///     系统Godot模块类，负责安装和注册游戏所需的各种系统组件，用于在游戏架构中集成系统功能
 /// </summary>
 public class SystemModule : IArchitectureModule
 {
