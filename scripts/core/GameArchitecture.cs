@@ -36,6 +36,7 @@ public sealed class GameArchitecture(IArchitectureConfiguration configuration, I
         InstallModule(new ModelModule());
         // 安装系统相关的Godot模块
         InstallModule(new SystemModule());
+        InstallModule(new EcsModule());
         // 安装工具类相关的Godot模块
         InstallModule(new UtilityModule());
         // 安装状态相关的Godot模块
