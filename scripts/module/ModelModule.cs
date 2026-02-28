@@ -18,7 +18,7 @@ public class ModelModule : IArchitectureModule
     ///     安装方法，用于将模型注册到指定的架构中。
     /// </summary>
     /// <param name="architecture">IArchitecture 接口实例，表示当前的应用程序架构。</param>
-    public  void Install(IArchitecture architecture)
+    public void Install(IArchitecture architecture)
     {
         // 获取设置数据仓库的实例，用于后续模型的初始化
         var settingsDataRepository = architecture.Context.GetUtility<ISettingsDataRepository>()!;
