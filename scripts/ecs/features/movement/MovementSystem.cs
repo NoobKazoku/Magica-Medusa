@@ -1,5 +1,4 @@
-﻿
-// Copyright (c) 2026 GeWuYou
+﻿// Copyright (c) 2026 GeWuYou
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -24,6 +23,11 @@ namespace MagicaMedusa.scripts.ecs.features.movement;
 /// </summary>
 public class MovementSystem : EcsSystemBase
 {
+    /// <summary>
+    ///     浮点数比较的容差值，用于避免浮点数精度问题
+    /// </summary>
+    private const float Epsilon = 0.0001f;
+    
     /// <summary>
     ///     ECS查询描述符，用于筛选包含特定组件的实体
     /// </summary>
@@ -50,7 +54,7 @@ public class MovementSystem : EcsSystemBase
             (ref InputDirection input, ref MoveSpeed move, ref Velocity vel) =>
             {
                 // 当存在水平输入时，直接设置水平速度
-                if (input.X != 0)
+                if (Math.Abs(input.X) > Epsilon)
                 {
                     vel.X = input.X * move.Speed;
                 }
