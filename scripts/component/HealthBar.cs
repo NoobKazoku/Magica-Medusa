@@ -7,6 +7,12 @@ using System;
 [Tool] 
 public partial class HealthBar : ProgressBar
 {
+    /// <summary>
+    ///     死亡事件委托
+    /// </summary>
+    [Signal]
+    public delegate void DeadEventHandler();
+
     // 以下导出部分作为测试,实际可去除
     //[ExportGroup("Test")]
     [Export] private float TestValue = 0f;
@@ -39,7 +45,7 @@ public partial class HealthBar : ProgressBar
     /// <param name="amount">恢复量</param>
     public void Heal(float amount)
     {
-        if (amount <= 0) return;
+        if (amount <= 0 || float.IsNaN(amount) || float.IsInfinity(amount)) return;
         Value = Mathf.Min(Value + amount, MaxValue);
     }
 
@@ -49,8 +55,15 @@ public partial class HealthBar : ProgressBar
     /// <param name="amount">伤害值</param>
     public void Harm(float amount)
     {
-        if (amount <= 0 || Value <= 0) return;
-        Value = Mathf.Max(Value - amount, 0);   
+        if (amount <= 0 || Value <= 0 || float.IsNaN(amount) || float.IsInfinity(amount)) return;
+        Value = Mathf.Max(Value - amount, 0);
+        
+        if (IsDead())
+        {
+            EmitSignal(SignalName.Dead);
+            GD.Print($"{nameof(Harm)}: {nameof(IsDead)}");
+        }
+        
     }
 
     /// <summary>
