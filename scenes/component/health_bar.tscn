@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ciurmnl6yb0qi"]
+
+[ext_resource type="Theme" uid="uid://c7lkot0xesum8" path="res://resource/theme/component/monster_health_bar_theme.tres" id="1_ob4lr"]
+[ext_resource type="Script" uid="uid://bghd1stlmqggb" path="res://scripts/component/HealthBar.cs" id="2_t8fi1"]
+
+[node name="HealthBar" type="ProgressBar" unique_id=888930330]
+custom_minimum_size = Vector2(100, 15)
+offset_right = 4.0
+offset_bottom = 4.0
+theme = ExtResource("1_ob4lr")
+max_value = 200.0
+value = 40.0
+show_percentage = false
+script = ExtResource("2_t8fi1")
+TestValue = 10.0
