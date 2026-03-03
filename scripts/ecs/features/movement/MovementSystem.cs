@@ -21,7 +21,7 @@ namespace MagicaMedusa.scripts.ecs.features.movement;
 ///     移动系统类，负责处理游戏中实体的移动逻辑
 ///     通过查询具有输入方向、移动速度和速度组件的实体，计算并更新其实时速度
 /// </summary>
-public class MovementSystem : EcsSystemBase
+public class MovementSystem : ArchSystemAdapter<float>
 {
     /// <summary>
     ///     浮点数比较的容差值，用于避免浮点数精度问题
@@ -33,23 +33,16 @@ public class MovementSystem : EcsSystemBase
     /// </summary>
     private QueryDescription _query;
 
-    /// <summary>
-    ///     ECS系统初始化方法，在系统启动时配置查询条件
-    ///     设置查询需要同时包含InputDirection、MoveSpeed和Velocity三个组件的实体
-    /// </summary>
-    protected override void OnEcsInit()
+    protected override void OnArchInitialize()
     {
         _query = new QueryDescription()
             .WithAll<InputDirection, MoveSpeed, Velocity>();
     }
 
-    /// <summary>
-    ///     系统更新方法，每帧执行移动逻辑计算
-    /// </summary>
-    /// <param name="deltaTime">帧间隔时间，单位为秒</param>
-    public override void Update(float deltaTime)
+    protected override void OnUpdate(in float t)
     {
         // 遍历所有符合条件的实体，更新其速度组件
+        var f = t;
         World.Query(in _query, 
             (ref InputDirection input, ref MoveSpeed move, ref Velocity vel) =>
             {
@@ -61,7 +54,7 @@ public class MovementSystem : EcsSystemBase
                 // 当无水平输入时，应用摩擦力逐渐减速至静止
                 else
                 {
-                    vel.X = MoveToward(vel.X, 0, move.Friction * deltaTime);
+                    vel.X = MoveToward(vel.X, 0, move.Friction * f);
                 }
             });
     }

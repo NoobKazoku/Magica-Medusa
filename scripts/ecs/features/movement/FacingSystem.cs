@@ -1,5 +1,4 @@
-﻿
-// Copyright (c) 2026 GeWuYou
+﻿// Copyright (c) 2026 GeWuYou
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -20,30 +19,32 @@ namespace MagicaMedusa.scripts.ecs.features.movement;
 
 /// <summary>
 ///     面向系统类，负责根据实体的速度自动更新其面向方向
-///     通过监听Velocity和Facing组件，实现角色朝向与移动方向的同步
+///     通过监听 Velocity 和 Facing 组件，实现角色朝向与移动方向的同步
 /// </summary>
-public class FacingSystem : EcsSystemBase
+public class FacingSystem : ArchSystemAdapter<float>
 {
     /// <summary>
-    ///     ECS查询描述符，用于筛选同时具有速度和面向组件的实体
+    ///     ECS 查询描述符，用于筛选同时具有速度和面向组件的实体
     /// </summary>
     private QueryDescription _query;
-
+    
     /// <summary>
-    ///     ECS系统初始化方法，在系统启动时配置查询条件
-    ///     设置查询需要同时包含Velocity和Facing两个组件的实体
+    ///     系统初始化方法，设置 ECS 查询条件
     /// </summary>
-    protected override void OnEcsInit()
+    protected override void OnArchInitialize()
     {
         _query = new QueryDescription()
             .WithAll<Velocity, Facing>();
     }
 
     /// <summary>
-    ///     系统更新方法，每帧检查并更新实体的面向方向
+    ///     系统更新方法，每帧调用以更新实体的面向方向
     /// </summary>
-    /// <param name="deltaTime">帧间隔时间，单位为秒</param>
-    public override void Update(float deltaTime)
+    /// <param name="t">
+    ///     时间增量，表示自上一帧以来经过的时间（通常以秒为单位）
+    ///     用于控制更新的频率和插值计算
+    /// </param>
+    protected override void OnUpdate(in float t)
     {
         // 遍历所有具有速度和面向组件的实体
         World.Query(in _query, (ref Velocity vel, ref Facing facing) =>
@@ -58,4 +59,5 @@ public class FacingSystem : EcsSystemBase
             };
         });
     }
+    
 }
