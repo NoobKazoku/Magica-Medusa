@@ -19,5 +19,11 @@ public enum SceneKey
     Main,
     Scene1,
     Scene2,
-    Home
+    Home,
+
+    /// <summary>
+    ///     玩家测试场景
+    ///     用于测试 ECS 移动系统和玩家控制
+    /// </summary>
+    PlayerTest
 }

@@ -29,9 +29,16 @@ public class EcsModule: IArchitectureModule
     /// <param name="architecture">游戏架构实例，用于注册系统组件</param>
     public void Install(IArchitecture architecture)
     {
-        // 注册面向系统，用于处理实体朝向逻辑
-        architecture.RegisterSystem(new FacingSystem());
-        // 注册移动系统，用于处理实体移动逻辑
+        // 按执行顺序注册 ECS 系统
+        // 1. 水平移动系统
         architecture.RegisterSystem(new MovementSystem());
+        // 2. 重力系统
+        architecture.RegisterSystem(new GravitySystem());
+        // 3. 跳跃系统
+        architecture.RegisterSystem(new JumpSystem());
+        // 4. 物理同步系统（ECS 与 Godot 物理引擎的桥梁）
+        architecture.RegisterSystem(new PhysicsSyncSystem());
+        // 5. 面向系统
+        architecture.RegisterSystem(new FacingSystem());
     }
 }
