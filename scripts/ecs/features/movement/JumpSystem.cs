@@ -19,7 +19,7 @@ namespace MagicaMedusa.scripts.ecs.features.movement;
 
 /// <summary>
 ///     跳跃系统类，负责处理实体的跳跃逻辑
-///     实现土狼时间（Coyote Time）机制，提升操作手感
+///     实现土狼时间（Coyote Time）和可变跳跃高度机制，提升操作手感
 /// </summary>
 public class JumpSystem : ArchSystemAdapter<float>
 {
@@ -32,6 +32,12 @@ public class JumpSystem : ArchSystemAdapter<float>
     ///     跳跃缓冲的最大帧数（按下跳跃键后的缓冲时间）
     /// </summary>
     private const int MaxJumpBufferFrames = 6;
+
+    /// <summary>
+    ///     松开跳跃键时的速度衰减系数（用于实现可变跳跃高度）
+    ///     值越小，短按跳跃时跳得越低
+    /// </summary>
+    private const float JumpReleaseMultiplier = 0.5f;
 
     /// <summary>
     ///     ECS 查询描述符，用于筛选具有跳跃输入、跳跃状态和速度组件的实体
@@ -78,6 +84,12 @@ public class JumpSystem : ArchSystemAdapter<float>
                 vel.Y = -jumpState.JumpForce;
                 jumpState.CoyoteFrames = MaxCoyoteFrames; // 跳跃后重置土狼时间
                 jumpState.JumpBufferFrames = MaxJumpBufferFrames; // 消耗跳跃缓冲
+            }
+
+            // 可变跳跃高度：如果松开跳跃键且正在上升，减少向上速度
+            if (!input.JumpHeld && vel.Y < 0)
+            {
+                vel.Y *= JumpReleaseMultiplier;
             }
 
             // 清除本帧的跳跃按下标志

@@ -11,40 +11,43 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System.Runtime.InteropServices;
+
 namespace MagicaMedusa.scripts.ecs.components;
 
 /// <summary>
 ///     跳跃状态组件，存储跳跃和重力相关的配置参数
 /// </summary>
+[StructLayout(LayoutKind.Sequential)]
 public struct JumpState
 {
     /// <summary>
     ///     跳跃初速度（向上）
     /// </summary>
-    public float JumpForce;
+    public float JumpForce{ get; set; }
 
     /// <summary>
     ///     重力加速度
     /// </summary>
-    public float Gravity;
+    public float Gravity{ get; set; }
 
     /// <summary>
     ///     最大下落速度
     /// </summary>
-    public float MaxFallSpeed;
+    public float MaxFallSpeed{ get; set; }
 
     /// <summary>
     ///     是否在地面上
     /// </summary>
-    public bool IsGrounded;
+    public bool IsGrounded{ get; set; }
 
     /// <summary>
     ///     离开地面后的缓冲帧数（土狼时间）
     /// </summary>
-    public int CoyoteFrames;
+    public int CoyoteFrames{ get; set; }
 
     /// <summary>
     ///     跳跃缓冲帧数（按下跳跃键后的缓冲时间）
     /// </summary>
-    public int JumpBufferFrames;
+    public int JumpBufferFrames{ get; set; }
 }
