@@ -29,6 +29,11 @@ public class JumpSystem : ArchSystemAdapter<float>
     private const int MaxCoyoteFrames = 6;
 
     /// <summary>
+    ///     跳跃缓冲的最大帧数（按下跳跃键后的缓冲时间）
+    /// </summary>
+    private const int MaxJumpBufferFrames = 6;
+
+    /// <summary>
     ///     ECS 查询描述符，用于筛选具有跳跃输入、跳跃状态和速度组件的实体
     /// </summary>
     private QueryDescription _query;
@@ -50,14 +55,29 @@ public class JumpSystem : ArchSystemAdapter<float>
     {
         World.Query(in _query, (ref JumpInput input, ref JumpState jumpState, ref Velocity vel) =>
         {
+            // 如果按下跳跃键，重置跳跃缓冲计数器
+            if (input.JumpPressed)
+            {
+                jumpState.JumpBufferFrames = 0;
+            }
+            else if (jumpState.JumpBufferFrames < MaxJumpBufferFrames)
+            {
+                // 递增跳跃缓冲计数器
+                jumpState.JumpBufferFrames++;
+            }
+
             // 检查是否可以跳跃（在地面或土狼时间内）
             var canJump = jumpState.IsGrounded || jumpState.CoyoteFrames < MaxCoyoteFrames;
 
+            // 检查是否有有效的跳跃缓冲
+            var hasJumpBuffer = jumpState.JumpBufferFrames < MaxJumpBufferFrames;
+
             // 处理跳跃输入
-            if (input.JumpPressed && canJump)
+            if (hasJumpBuffer && canJump)
             {
                 vel.Y = -jumpState.JumpForce;
                 jumpState.CoyoteFrames = MaxCoyoteFrames; // 跳跃后重置土狼时间
+                jumpState.JumpBufferFrames = MaxJumpBufferFrames; // 消耗跳跃缓冲
             }
 
             // 清除本帧的跳跃按下标志

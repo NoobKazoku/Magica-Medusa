@@ -83,7 +83,8 @@ public partial class PlayerTest : Node2D, IController, ISceneBehaviorProvider, I
                 Gravity = 980f,
                 MaxFallSpeed = 500f,
                 IsGrounded = false,
-                CoyoteFrames = 0
+                CoyoteFrames = 0,
+                JumpBufferFrames = 999 // 初始化为大值，表示没有跳跃缓冲
             },
             new PhysicsBody { NodeId = Player.GetInstanceId() }
         );

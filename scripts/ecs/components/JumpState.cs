@@ -42,4 +42,9 @@ public struct JumpState
     ///     离开地面后的缓冲帧数（土狼时间）
     /// </summary>
     public int CoyoteFrames;
+
+    /// <summary>
+    ///     跳跃缓冲帧数（按下跳跃键后的缓冲时间）
+    /// </summary>
+    public int JumpBufferFrames;
 }

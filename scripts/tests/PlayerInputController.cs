@@ -14,9 +14,7 @@
 using Arch.Core;
 using GFramework.SourceGenerators.Abstractions.logging;
 using Godot;
-using MagicaMedusa.scripts.core.controller;
 using MagicaMedusa.scripts.ecs.components;
-using MagicaMedusa.scripts.enums;
 
 namespace MagicaMedusa.scripts.tests;
 
@@ -24,7 +22,7 @@ namespace MagicaMedusa.scripts.tests;
 ///     玩家输入控制器，负责轮询玩家输入并写入 ECS 组件
 /// </summary>
 [Log]
-public partial class PlayerInputController : GameInputController
+public partial class PlayerInputController : Node
 {
     /// <summary>
     ///     玩家实体引用
@@ -48,30 +46,14 @@ public partial class PlayerInputController : GameInputController
     }
 
     /// <summary>
-    ///     接受 Gameplay 阶段的输入
+    ///     在物理帧轮询输入并更新 ECS 组件
+    ///     使用 _PhysicsProcess 确保与 ECS 系统同步
     /// </summary>
-    protected override bool AcceptPhase(InputPhase phase)
-    {
-        _log.Debug($"输入状态：{phase.ToString()}");
-        return phase == InputPhase.Gameplay;
-    }
-
-    /// <summary>
-    ///     处理输入事件（本控制器使用轮询方式，此方法留空）
-    /// </summary>
-    protected override void Handle(InputPhase phase, InputEvent @event)
-    {
-        // 使用 _Process 轮询输入，此方法不需要实现
-    }
-
-    /// <summary>
-    ///     每帧轮询输入并更新 ECS 组件
-    /// </summary>
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (!_world.IsAlive(_playerEntity))
             return;
-        
+
         // 获取水平输入（A/D 或 左箭头/右箭头）
         var horizontalInput = Input.GetAxis("move_left", "move_right");
 
@@ -83,9 +65,9 @@ public partial class PlayerInputController : GameInputController
         var jumpPressed = Input.IsActionJustPressed("jump");
         var jumpHeld = Input.IsActionPressed("jump");
 
-        // 更新跳跃输入组件
+        // 更新跳跃输入组件（使用 OR 操作避免覆盖）
         ref var jumpInput = ref _world.Get<JumpInput>(_playerEntity);
-        jumpInput.JumpPressed = jumpPressed;
+        jumpInput.JumpPressed = jumpInput.JumpPressed || jumpPressed; // 累积跳跃输入
         jumpInput.JumpHeld = jumpHeld;
     }
 }
