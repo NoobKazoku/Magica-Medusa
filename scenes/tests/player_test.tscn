@@ -69,6 +69,7 @@ offset_bottom = 10.0
 color = Color(0.501961, 0.501961, 0.501961, 1)
 
 [node name="PlayerInputController" type="Node" parent="." unique_id=1554270985]
+unique_name_in_owner = true
 script = ExtResource("2_input_controller")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=693650890]
