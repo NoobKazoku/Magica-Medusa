@@ -50,12 +50,12 @@ public partial class PlayerTest : Node2D, IController, ISceneBehaviorProvider, I
     /// <summary>
     ///     ECS World 实例
     /// </summary>
-    private World _world;
+    private World _world = null!;
 
     /// <summary>
     ///     输入控制器实例
     /// </summary>
-    private PlayerInputController _inputController;
+    private PlayerInputController InputController => GetNode<PlayerInputController>("%PlayerInputController");
 
     /// <summary>
     ///     场景键值字符串
@@ -87,10 +87,7 @@ public partial class PlayerTest : Node2D, IController, ISceneBehaviorProvider, I
             },
             new PhysicsBody { NodeId = Player.GetInstanceId() }
         );
-
-        // 初始化输入控制器
-        _inputController = GetNode<PlayerInputController>("PlayerInputController");
-        _inputController.Initialize(_world, _playerEntity);
+        InputController.Initialize(_world, _playerEntity);
     }
 
     /// <summary>

@@ -12,6 +12,7 @@
 // limitations under the License.
 
 using Arch.Core;
+using GFramework.SourceGenerators.Abstractions.logging;
 using Godot;
 using MagicaMedusa.scripts.core.controller;
 using MagicaMedusa.scripts.ecs.components;
@@ -22,6 +23,7 @@ namespace MagicaMedusa.scripts.tests;
 /// <summary>
 ///     玩家输入控制器，负责轮询玩家输入并写入 ECS 组件
 /// </summary>
+[Log]
 public partial class PlayerInputController : GameInputController
 {
     /// <summary>
@@ -50,6 +52,7 @@ public partial class PlayerInputController : GameInputController
     /// </summary>
     protected override bool AcceptPhase(InputPhase phase)
     {
+        _log.Debug($"输入状态：{phase.ToString()}");
         return phase == InputPhase.Gameplay;
     }
 
@@ -68,7 +71,7 @@ public partial class PlayerInputController : GameInputController
     {
         if (!_world.IsAlive(_playerEntity))
             return;
-
+        
         // 获取水平输入（A/D 或 左箭头/右箭头）
         var horizontalInput = Input.GetAxis("move_left", "move_right");
 
