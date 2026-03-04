@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bq8sas0t1u2v3"]
+
+[ext_resource type="Script" path="res://global/EcsDriver.cs" id="1_ecs_driver"]
+
+[node name="EcsDriver" type="Node"]
+script = ExtResource("1_ecs_driver")
