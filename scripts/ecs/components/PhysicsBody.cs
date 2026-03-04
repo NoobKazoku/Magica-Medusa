@@ -21,5 +21,5 @@ public struct PhysicsBody
     /// <summary>
     ///     CharacterBody2D 的实例 ID
     /// </summary>
-    public ulong NodeId;
+    public ulong NodeId{ get; set; }
 }

@@ -11,20 +11,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System.Runtime.InteropServices;
+
 namespace MagicaMedusa.scripts.ecs.components;
 
 /// <summary>
 ///     跳跃输入组件，存储玩家的跳跃输入状态
 /// </summary>
+[StructLayout(LayoutKind.Sequential)]
 public struct JumpInput
 {
     /// <summary>
     ///     本帧是否按下跳跃键
     /// </summary>
-    public bool JumpPressed;
+    public bool JumpPressed { get; set; }
 
     /// <summary>
     ///     跳跃键是否持续按住
     /// </summary>
-    public bool JumpHeld;
+    public bool JumpHeld { get; set; }
 }

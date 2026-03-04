@@ -28,8 +28,9 @@ public struct MoveSpeed
     public float Speed { get; set; }
     
     /// <summary>
-    ///     摩擦力系数，用于计算速度衰减，值域通常在0-1之间
-    ///     数值越小表示摩擦力越大，速度衰减越快
+    ///     摩擦力减速度，单位为像素/秒²
+    ///     用于在没有输入时使实体快速停止
+    ///     典型值：800（快速停止）
     /// </summary>
     public float Friction { get; set; }
 }
