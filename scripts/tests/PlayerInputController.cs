@@ -13,6 +13,7 @@
 
 using Arch.Core;
 using GFramework.SourceGenerators.Abstractions.logging;
+using GFramework.SourceGenerators.Abstractions.rule;
 using Godot;
 using MagicaMedusa.scripts.ecs.components;
 
@@ -22,6 +23,7 @@ namespace MagicaMedusa.scripts.tests;
 ///     玩家输入控制器，负责轮询玩家输入并写入 ECS 组件
 /// </summary>
 [Log]
+[ContextAware]
 public partial class PlayerInputController : Node
 {
     /// <summary>
@@ -32,16 +34,15 @@ public partial class PlayerInputController : Node
     /// <summary>
     ///     ECS World 引用
     /// </summary>
-    private World _world;
+    private World _world = null!;
 
     /// <summary>
     ///     初始化输入控制器
     /// </summary>
-    /// <param name="world">ECS World 实例</param>
     /// <param name="playerEntity">玩家实体</param>
-    public void Initialize(World world, Entity playerEntity)
+    public void Initialize(Entity playerEntity)
     {
-        _world = world;
+        _world = this.GetService<World>()!;
         _playerEntity = playerEntity;
     }
 

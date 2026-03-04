@@ -88,7 +88,7 @@ public partial class PlayerTest : Node2D, IController, ISceneBehaviorProvider, I
             },
             new PhysicsBody { NodeId = Player.GetInstanceId() }
         );
-        InputController.Initialize(_world, _playerEntity);
+        InputController.Initialize(_playerEntity);
     }
 
     /// <summary>
